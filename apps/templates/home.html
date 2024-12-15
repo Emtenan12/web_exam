@@ -7,14 +7,14 @@
 <style> 
     body {
         font-family: "Arial", sans-serif;
-        background-color: #f8f9fa; /* Very light gray */
+        background-color: #f8f9fa;
         color: #333;
         margin: 0;
         padding: 0;
     }
 
     h1 { 
-        background-color: #d3d3d3; /* Light gray */
+        background-color: #d3d3d3; 
         color: #333; 
         padding: 20px; 
         text-align: center; 
@@ -26,29 +26,36 @@
     }
 
     h2 {
-        color: #555; /* Darker gray */
+        color: #555; 
         text-align: center;
         font-size: 1.8em;
         font-weight: 600;
         margin: 20px 0;
     }
 
+    img {
+        display: block;
+        margin: 20px auto;
+        max-width: 300px; 
+        height: auto; 
+        border-radius: 10px;
+    }
+
     a {
         display: inline-block;
-        margin: 10px auto;
+        margin: 20px auto; /* Space above the link */
         padding: 12px 20px;
-        background-color: #d3d3d3; /* Light gray for button */
-        color: #333; /* Text color - darker gray */
+        background-color: #d3d3d3; 
+        color: #333; 
         text-decoration: none;
         font-size: 1.2em;
         font-weight: bold;
         border-radius: 8px;
         transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        text-align: center;
     }
 
     a:hover {
-        background-color: #c0c0c0; /* Slightly darker gray on hover */
+        background-color: #c0c0c0; 
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     }
 
@@ -62,8 +69,8 @@
     footer {
         text-align: center;
         padding: 10px;
-        background-color: #d3d3d3; /* Light gray */
-        color: #555; /* Darker gray */
+        background-color: #d3d3d3;
+        color: #555;
         position: fixed;
         bottom: 0;
         width: 100%;
@@ -80,14 +87,19 @@
 
 {% block content %} 
 <div class="container">
-    <h1>Welcome to Emtenan's Library2</h1>   
+    <h1>Welcome to Emtenan's game page</h1>   
 
-    <h2>Explore Your Favorite Books</h2>
-    <a href="/books/list_books/">View Book List</a>
+    <h2>Explore Your Favorite games</h2>
+
+    <!-- Image -->
+    <img src="{% static 'images/welcome_image.jpg' %}" alt="Welcome Image">
+
+    <!-- View Games Link -->
+    <div>
+        <a href="/books/list_games/">View Games List</a> 
+    </div>
 
     <hr>
-
-    <p>To explore individual book details, navigate through the book list.</p>
 </div>
 
 <footer>

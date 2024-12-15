@@ -4,6 +4,8 @@
 <head> 
     <title>{% block title %} {% endblock title %}</title> 
      {% block stylesheets %}{% endblock stylesheets %} 
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
 </head> 
 <body> 
     {% block content %} {% endblock content %} 

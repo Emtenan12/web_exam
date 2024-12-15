@@ -1,0 +1,115 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %}List games Page{% endblock title %}
+
+{% block stylesheets %}
+<style>
+    body {
+        font-family: "Arial", sans-serif;
+        background-color: #f8f9fa; /* Very light gray */
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        background-color: #d3d3d3; /* Light gray */
+        color: #333;
+        padding: 20px;
+        text-align: center;
+        font-size: 2.5em;
+        font-weight: bold;
+        margin-top: 0;
+        font-family: "Georgia", serif;
+        letter-spacing: 1px;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 20px auto;
+        max-width: 600px;
+    }
+
+    li {
+        background-color: #fff;
+        padding: 15px 20px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease;
+    }
+
+    li:hover {
+        background-color: #f0f0f0;
+    }
+
+    .game-title {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #006400; /* Dark green */
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .game-title:hover {
+        color: #32cd32; /* Light green */
+    }
+
+    .game-developer {
+        font-size: 1em;
+        color: #555; /* Slightly darker gray */
+        margin-top: 5px;
+    }
+
+    .no-games {
+        text-align: center;
+        font-size: 1.5em;
+        color: #999;
+        margin-top: 50px;
+    }
+
+    /* Go Back Button Styling */
+    .go-back {
+        display: block;
+        margin: 30px auto;
+        padding: 10px 20px;
+        background-color: #d3d3d3;
+        color: #333;
+        text-decoration: none;
+        font-size: 1.2em;
+        font-weight: bold;
+        border-radius: 8px;
+        text-align: center;
+        max-width: 150px;
+        transition: background-color 0.3s ease;
+    }
+
+    .go-back:hover {
+        background-color: #c0c0c0;
+    }
+</style>
+{% endblock stylesheets %}
+
+{% block content %}
+<h1>All games</h1>
+
+{% if games %}
+<ul>
+    {% for game in games %}
+    <li>
+        <p class="game-title">{{ game.title }}</p>
+        <p class="game-developer">by {{ game.devolper.name }}</p>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p class="no-games">No games available</p>
+{% endif %}
+
+<!-- Go Back Option -->
+<a href="{% url 'books.Landing_Page' %}" class="go-back">Go Back</a>
+
+{% endblock content %}
